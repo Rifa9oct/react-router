@@ -1,8 +1,13 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
 const UserDetails = () => {
-    const user = useLoaderData();
-    const navigate = useNavigate();
+    const user = useLoaderData();   //load data from API
+    const navigate = useNavigate(); //clik or something action happen then it will help to go another route.
+
+    // const params = useParams();  
+    const {userId} = useParams();
+    console.log(userId);
+
     const handleGoBack = () =>{
         navigate(-1);
     }
